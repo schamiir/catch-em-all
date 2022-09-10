@@ -10,6 +10,14 @@ document.getElementById("button").addEventListener("click", getfetch)
 // Capitalize Function
 function capitalizeName(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
+
+    /*
+    data.name.charAt(0).toUpperCase() + data.name.slice(1)
+
+    slice(startIndex, endIndex) // slice(0,3) Dit does not include the last  
+    slice(1) itto
+    D + itto
+    */
 }
 
 // array = data.abilities
@@ -41,13 +49,16 @@ function getfetch(){
         console.log(data)
         //setting const variable equal to grabbed API data
         const name = data.name
-        // slice(startIndex, endIndex) // slice(0,3) Dit does not include the last  
-        // slice(1) itto
-        // D + itto
-        const type = data.types[0].type.name  
-        
-        const image = data.sprites.other["official-artwork"]["front_default"]    
 
+
+        const type = data.types[0].type.name  
+
+        
+        const image = data.sprites.other["official-artwork"]["front_default"] 
+        data.sprites.other.official-artwork.front_default
+        data["sprites"]["other"]["official-artwork"]["front_default"]
+
+        data.sprites.other["official-artwork"]["front_default"] 
         const abilities = data.abilities[0].ability.name
         
         // array = data.abilities 
@@ -56,8 +67,11 @@ function getfetch(){
         // innerText = ability.name
       
         // Display On the DOM
+        // document.getElementById('name').innerText = `Name: ${capitalizeName(name)}`
         document.getElementById('name').innerText = `Name: ${capitalizeName(name)}`
+
         document.getElementById('type').innerText = `Type: ${capitalizeName(type)}`
+
         document.querySelector('img').src = image
         
         abilityMaker(data)
