@@ -22,15 +22,21 @@ function capitalizeName(string) {
 
 // array = data.abilities
 
-function abilityMaker(skillsData){
-    const abilityArr = skillsData.abilities // array
+function abilityMaker(skillsData /* data */){
+    const abilityArr = skillsData.abilities // array   
+    // skillsData ===  data
+    
+
     const ul = document.getElementById("abilities")
     ul.innerText = ""
     for (let i = 0; i < abilityArr.length; i++) {
         let li = document.createElement('li')
-        ul.appendChild(li).innerText = `Ability ${i+1}: ${abilityArr[i].ability.name}`
+        ul.appendChild(li).innerText = `Ability ${i+ 1}: ${abilityArr[i].ability.name}`
+        //  abilityArr[i].ability.name === data.abilities[i].ability.name
+        // Abilit 1 : Stone 
     }
 }
+//const abilities = data.abilities[0].ability.name
 
 // Ability i:  limber abilityArr[i].ability.name
 //   document.getElementById('type').innerText = `Type: ${capitalizeName(type)}`
@@ -39,14 +45,19 @@ function abilityMaker(skillsData){
 // innterText = limber 
 // innerText = Ability 1: Lim
 
-function getfetch(){
-    const userInput = document.querySelector('input').value.toLowerCase()
-    const url = `https://pokeapi.co/api/v2/pokemon/${userInput}`
+const userInput = document.querySelector('input').value.toLowerCase()
 
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
+async function getfetch(){
+    try {
+    const userInput =  document.querySelector('input').value.toLowerCase()
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${userInput}`) 
+
+
+    const data = await response.json() 
+
         console.log(data)
+
+        console.log(data.abilities[0].ability.name.abilities)
         //setting const variable equal to grabbed API data
         const name = data.name
 
@@ -55,10 +66,8 @@ function getfetch(){
 
         
         const image = data.sprites.other["official-artwork"]["front_default"] 
-        data.sprites.other.official-artwork.front_default
-        data["sprites"]["other"]["official-artwork"]["front_default"]
 
-        data.sprites.other["official-artwork"]["front_default"] 
+        
         const abilities = data.abilities[0].ability.name
         
         // array = data.abilities 
@@ -81,7 +90,17 @@ function getfetch(){
         */
 
         //const abilities = data.abilities[0].ability.name
-    })
+    } catch(error) {
+        //console.log("Harman is eating yummy food"
+        const userInput = document.querySelector('input').value.toLowerCase()
+        document.querySelector('h1').innerHTML = `Error: ${userInput} not Harman`
+
+        document.getElementById('type').innerText = ""
+
+        document.getElementById('abilities').innerText = ""
+
+        document.getElementById('image').src = 'https://pbs.twimg.com/profile_images/1491205677183815681/SmH0imWH_400x400.jpg'
+    }
 }
 
 
