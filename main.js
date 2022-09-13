@@ -67,8 +67,7 @@ async function getfetch(){
         
         abilityMaker(data)
 
-    })
-    } catch(error) {
+    }catch(error) {
         //console.log("Harman is eating yummy food"
         const userInput = document.querySelector('input').value.toLowerCase()
         document.querySelector('h1').innerHTML = `Error: ${userInput} not Harman`
