@@ -8,33 +8,20 @@
 
 document.getElementById("button").addEventListener("click", getfetch)
 // Capitalize Function
-function capitalizeName(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1)
-
-    /*
-    data.name.charAt(0).toUpperCase() + data.name.slice(1)
-
-    slice(startIndex, endIndex) // slice(0,3) Dit does not include the last  
-    slice(1) itto
-    D + itto
-    */
+function capitalizeName() {
+   // create a function that capitalizes a string - we want to make our pokemon names and other contents capitalized! 
 }
+
+// at - s
+
 
 // array = data.abilities
 
-function abilityMaker(skillsData /* data */){
-    const abilityArr = skillsData.abilities // array   
-    // skillsData ===  data
-    
 
-    const ul = document.getElementById("abilities")
-    ul.innerText = ""
-    for (let i = 0; i < abilityArr.length; i++) {
-        let li = document.createElement('li')
-        ul.appendChild(li).innerText = `Ability ${i+ 1}: ${abilityArr[i].ability.name}`
-        //  abilityArr[i].ability.name === data.abilities[i].ability.name
-        // Abilit 1 : Stone 
-    }
+function abilityMaker(){
+    // create a function that creates a list of abilities. The length of the list will be dependent on the pokemon! 
+    // and display it on the dom - -----
+
 }
 //const abilities = data.abilities[0].ability.name
 
@@ -42,8 +29,7 @@ function abilityMaker(skillsData /* data */){
 //   document.getElementById('type').innerText = `Type: ${capitalizeName(type)}`
 
 // limber => Ability 1: Limber
-// innterText = limber 
-// innerText = Ability 1: Lim
+// Ability 1: Lim
 
 const userInput = document.querySelector('input').value.toLowerCase()
 
@@ -57,11 +43,7 @@ async function getfetch(){
 
         console.log(data)
 
-        console.log(data.abilities[0].ability.name.abilities)
-        //setting const variable equal to grabbed API data
         const name = data.name
-
-
         const type = data.types[0].type.name  
 
         
@@ -84,12 +66,8 @@ async function getfetch(){
         document.querySelector('img').src = image
         
         abilityMaker(data)
-        /*
-        Ability 1 : Limber 
-        Ability 2: Imposter 
-        */
 
-        //const abilities = data.abilities[0].ability.name
+    })
     } catch(error) {
         //console.log("Harman is eating yummy food"
         const userInput = document.querySelector('input').value.toLowerCase()
@@ -101,6 +79,7 @@ async function getfetch(){
 
         document.getElementById('image').src = 'https://pbs.twimg.com/profile_images/1491205677183815681/SmH0imWH_400x400.jpg'
     }
+
 }
 
 
