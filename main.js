@@ -19,7 +19,7 @@ function capitalizeName() {
 
 function abilityMaker(){
     // create a function that creates a list of abilities. The length of the list will be dependent on the pokemon! 
-    // and display it on the dom -
+    // and display it on the dom - --
 }
 
 // Ability i:  limber abilityArr[i].ability.name
