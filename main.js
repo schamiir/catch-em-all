@@ -8,21 +8,51 @@
 
 document.getElementById("button").addEventListener("click", getfetch)
 // Capitalize Function
-function capitalizeName() {
+
+function capitalizeName(str) {
    // create a function that capitalizes a string - we want to make our pokemon names and other contents capitalized! 
+   /*
+    P - string 
+    R - "Ditto"
+    E - // Pikachu , Mewtwo and etc
+    P {
+        get string -> make first letter capital 
+        // we can use charAt and to upper case method
+        //  slice
+    }
+   */ 
+    const pokemonString = str.charAt(0).toUpperCase() + str.name.slice(1); // "ditto"
+
+    return pokemonString
+
 }
 
-// at - s
 
 
 // array = data.abilities
 
 
-function abilityMaker(){
+function abilityMaker(array){
     // create a function that creates a list of abilities. The length of the list will be dependent on the pokemon! 
     // and display it on the dom - -----
-
+    const pokemonAbilities = array.abilities
+    const ul = document.querySelector('ul')
+    
+    ul.innerText = ""
+    for(let i = 0; i <= pokemonAbilities.length; i++){
+        let li = document.createElement('li')
+        ul.appendChild(li).innerText = `Abilities ${i + 1}: ${pokemonAbilities[i].ability.name} `
+        // Ability 1 : Freeze 
+        // Ability 2: Fire
+    }
+    // queryselector  => target html => target ul
+    // LOOP
+    // appendChild() => li to ul
+    // innertext 
+    // ul.appendChild(li) 
 }
+
+
 //const abilities = data.abilities[0].ability.name
 
 // Ability i:  limber abilityArr[i].ability.name
@@ -38,7 +68,7 @@ async function getfetch(){
     const userInput =  document.querySelector('input').value.toLowerCase()
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${userInput}`) 
 
-
+    
     const data = await response.json() 
 
         console.log(data)
