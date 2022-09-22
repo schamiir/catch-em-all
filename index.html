@@ -10,18 +10,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Api</title>
     <script src="main.js" defer></script>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
-    <h1 class="name" id="name">Name:</h1>
-    <h2 class="type" id="type">Type:</h2>
-    <h3 class="abilities" id="abilities">Abilities:</h3>
-    <ul id="abilities"></ul>
+    <main class="main-container">
+        <section class="search-window">
+            <img id="logoTitle" src="Assets/pokemonlogo 1.png" alt="logo">
+            <img id="pokeball" src="Assets/pokeball.png" alt="pokeball">
+            <div class="search-box">
+                <input class="input" placeholder="Who's that Pokemon?" type="text"/>
+                <button class="button" id="button" type="button" name="button">I Choose You</button>
+            </div>
+        </section>
 
-    <input placeholder="Who's that Pokemon?" type="text"/>
-    <button class="button" id="button" type="button" name="button"> pokemonbutton</button>
-    <img id="image" src="" alt=""> 
-    <h4 class="error"></h4>
+
+        <h1 class="name" id="name"></h1>
+        <h2 class="type" id="type"></h2>
+        <h3 class="abilities" id="abilities"></h3>
+        <ul id="abilities"></ul>
+        <img id="pokemonImg" src="" alt="">
+        <h4 class="error"></h4>
+        <img id='logo' src="" alt=""> 
+
+    </main>
 
 </body>
