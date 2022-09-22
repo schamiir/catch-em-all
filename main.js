@@ -1,10 +1,4 @@
-/*  see the name 
-    see the image 
-    see the type
-    moves - abilities 
 
-*/
-    
 
 document.getElementById("button").addEventListener("click", getfetch)
 // Capitalize Function
@@ -21,9 +15,9 @@ function capitalizeName(str) {
         //  slice
     }
    */ 
-    const pokemonString = str.charAt(0).toUpperCase() + str.name.slice(1); // "ditto"
+    return str.charAt(0).toUpperCase() + str.slice(1); // "ditto"
 
-    return pokemonString
+    
 
 }
 
@@ -39,7 +33,7 @@ function abilityMaker(array){
     const ul = document.querySelector('ul')
     
     ul.innerText = ""
-    for(let i = 0; i <= pokemonAbilities.length; i++){
+    for(let i = 0; i < pokemonAbilities.length; i++){
         let li = document.createElement('li')
         ul.appendChild(li).innerText = `Abilities ${i + 1}: ${pokemonAbilities[i].ability.name} `
         // Ability 1 : Freeze 
@@ -89,11 +83,15 @@ async function getfetch(){
       
         // Display On the DOM
         // document.getElementById('name').innerText = `Name: ${capitalizeName(name)}`
+
         document.getElementById('name').innerText = `Name: ${capitalizeName(name)}`
 
         document.getElementById('type').innerText = `Type: ${capitalizeName(type)}`
 
-        document.querySelector('img').src = image
+        document.getElementById('pokemonImg').src = image
+       
+
+        document.getElementById('logo').src = `Assets/logo/${type}.png`
         
         abilityMaker(data)
 
