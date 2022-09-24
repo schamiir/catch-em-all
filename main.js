@@ -35,7 +35,7 @@ function abilityMaker(array){
     ul.innerText = ""
     for(let i = 0; i < pokemonAbilities.length; i++){
         let li = document.createElement('li')
-        ul.appendChild(li).innerText = `Abilities ${i + 1}: ${pokemonAbilities[i].ability.name} `
+        ul.appendChild(li).innerText = `Ability ${i + 1}: ${pokemonAbilities[i].ability.name} `
         // Ability 1 : Freeze 
         // Ability 2: Fire
     }
@@ -84,9 +84,9 @@ async function getfetch(){
         // Display On the DOM
         // document.getElementById('name').innerText = `Name: ${capitalizeName(name)}`
 
-        document.getElementById('name').innerText = `Name: ${capitalizeName(name)}`
+        document.getElementById('name').innerText = ` ${capitalizeName(name)}`
 
-        document.getElementById('type').innerText = `Type: ${capitalizeName(type)}`
+        document.getElementById('type').innerText = ` ${capitalizeName(type)}`
 
         document.getElementById('pokemonImg').src = image
        
