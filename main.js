@@ -35,7 +35,7 @@ function abilityMaker(array){
     ul.innerText = ""
     for(let i = 0; i < pokemonAbilities.length; i++){
         let li = document.createElement('li')
-        ul.appendChild(li).innerText = `Ability ${i + 1}: ${pokemonAbilities[i].ability.name} `
+        ul.appendChild(li).innerText = `Ability ${i + 1}: ${capitalizeName(pokemonAbilities[i].ability.name)}`
         // Ability 1 : Freeze 
         // Ability 2: Fire
     }
@@ -90,6 +90,7 @@ async function getfetch(){
 
         document.getElementById('pokemonImg').src = image
        
+        
 
         document.getElementById('logo').src = `Assets/logo/${type}.png`
         
@@ -103,8 +104,8 @@ async function getfetch(){
         document.getElementById('type').innerText = ""
 
         document.getElementById('abilities').innerText = ""
-
-        document.getElementById('image').src = 'https://pbs.twimg.com/profile_images/1491205677183815681/SmH0imWH_400x400.jpg'
+        document.getElementById('logo').src = ""
+        document.getElementById('pokemonImg').src = 'https://pbs.twimg.com/profile_images/1491205677183815681/SmH0imWH_400x400.jpg'
     }
 
 }
